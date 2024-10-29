@@ -1,0 +1,89 @@
+/* Thiết lập chung */
+
+body {
+    font-family: 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffe6f2;
+    /* Màu nền hồng nhạt */
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 600px;
+    /* Chiều rộng cố định */
+    height: 400px;
+    text-align: center;
+}
+
+h2 {
+    color: #d63384;
+    /* Màu hồng đậm */
+    margin-bottom: 20px;
+}
+
+textarea {
+    font-family: 'Times New Roman', serif;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #d9a9c3;
+    /* Viền hồng nhạt */
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    /* Căn đều hai nút */
+    margin-bottom: 20px;
+}
+
+button {
+    width: 48%;
+    /* Đặt chiều rộng của nút để chúng nằm cạnh nhau */
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:nth-child(1) {
+    background-color: #d468a7;
+    /* Màu hồng đậm cho nút "Mã hóa" */
+    color: white;
+}
+
+button:nth-child(2) {
+    background-color: #d468a7;
+    /* Màu hồng đậm cho nút "Giải mã" */
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#outputText {
+    font-family: 'Times New Roman', serif;
+    background-color: white;
+    /* Nền hộp kết quả */
+    border: 1px solid #d9a9c3;
+    font-weight: bold;
+}
+
+button:active {
+    transform: scale(0.98);
+    /* Hiệu ứng nhấn nút */
+}

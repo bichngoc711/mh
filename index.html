@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hóng hớt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Có tin gì sốt dẻo à =))))))</h2>
+        <textarea id="inputText" rows="4" placeholder="Nhập văn bản cần mã hóa..."></textarea>
+        <div class="button-container">
+            <button onclick="maHoa()">Mã hóa</button>
+            <button onclick="giaiMa()">Giải mã</button>
+        </div>
+        <textarea id="outputText" rows="4" placeholder="Kết quả sẽ hiển thị ở đây..." readonly></textarea>
+    </div>
+
+    <script>
+        const P = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        const K = 2;
+
+        function maHoa() {
+            let text = document.getElementById("inputText").value;
+            let result = '';
+
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                let index = P.indexOf(char);
+
+                if (index === -1) {
+                    result += char;
+                } else {
+                    let newIndex = (index + K) % P.length;
+                    result += P[newIndex];
+                }
+            }
+
+            document.getElementById("outputText").value = result;
+        }
+
+        function giaiMa() {
+            let text = document.getElementById("inputText").value;
+            let result = '';
+
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                let index = P.indexOf(char);
+
+                if (index === -1) {
+                    result += char;
+                } else {
+                    let newIndex = (index - K + P.length) % P.length;
+                    result += P[newIndex];
+                }
+            }
+
+            document.getElementById("outputText").value = result;
+        }
+    </script>
+</body>
+
+</html>
